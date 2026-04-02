@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<title>底氣 IPQ 自測</title>
+<style>
+  :root{--pri:#3a2e2a;--acc:#d4a574;--bg:#f5f0ec;--card:#fff;--txt:#3a2e2a;--txt2:#6b5b52;--bdr:#e8ddd5;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{font-size:16px;-webkit-text-size-adjust:100%;}
+  body{font-family:"PingFang TC","Noto Sans TC",sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;}
+  .hero{background:linear-gradient(160deg,#3a2e2a,#5a4a42);color:#f0ece8;padding:50px 24px 40px;text-align:center;}
+  .hero h1{font-size:1.6rem;font-weight:700;letter-spacing:2px;margin-bottom:10px;}
+  .hero h1 em{color:var(--acc);font-style:normal;}
+  .hero p{font-size:.9rem;color:#c8bdb5;max-width:360px;margin:0 auto;line-height:1.8;}
+  .wrap{max-width:520px;margin:0 auto;padding:0 20px;}
+  .intro{text-align:center;padding:28px 0 8px;font-size:.88rem;color:var(--txt2);}
+  .intro b{color:var(--pri);}
+  .dv{text-align:center;padding:24px 0 8px;font-size:.75rem;color:var(--acc);font-weight:700;letter-spacing:2px;}
+  .qc{background:var(--card);border-radius:14px;padding:24px 22px;margin-bottom:14px;box-shadow:0 2px 16px rgba(58,46,42,.08);border:1px solid var(--bdr);}
+  .qh{display:flex;gap:12px;margin-bottom:6px;}
+  .qn{flex-shrink:0;width:28px;height:28px;background:var(--acc);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;margin-top:2px;}
+  .qt{font-size:.92rem;color:var(--pri);line-height:1.7;font-weight:500;}
+  .qe{font-size:.8rem;color:#a09585;line-height:1.6;margin-bottom:16px;padding-left:40px;}
+  .rg{display:flex;gap:6px;justify-content:center;}
+  .rg input[type=radio]{position:absolute;opacity:0;width:0;height:0;pointer-events:none;}
+  .rg label{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:12px;border:2px solid var(--bdr);background:var(--card);color:var(--txt2);font-size:1.1rem;font-weight:600;cursor:pointer;transition:all .12s ease;}
+  .rg input[type=radio]:checked+label{background:var(--acc);border-color:var(--acc);color:#fff;transform:scale(1.08);box-shadow:0 2px 12px rgba(212,165,116,.35);}
+  .rl{display:flex;justify-content:space-between;margin-top:6px;font-size:.7rem;color:#bbb;padding:0 4px;}
+  .sw{text-align:center;padding:20px 0 40px;}
+  .sb{display:inline-block;padding:16px 48px;background:var(--pri);color:#f0ece8;font-size:1rem;font-weight:700;border:none;border-radius:50px;letter-spacing:1px;cursor:pointer;-webkit-appearance:none;text-decoration:none;-webkit-tap-highlight-color:rgba(212,165,116,.3);}
+  .sh{font-size:.78rem;color:#bbb;margin-top:10px;}
+  .result{display:none;padding:0 0 60px;}
+  .result.show{display:block;}
+  .rsc{background:linear-gradient(160deg,#3a2e2a,#5a4a42);border-radius:18px;padding:36px 28px;text-align:center;color:#f0ece8;margin-bottom:20px;}
+  .rsc .sl{font-size:.8rem;color:#c8bdb5;letter-spacing:2px;margin-bottom:6px;}
+  .rsc .sn{font-size:3.5rem;font-weight:700;color:var(--acc);line-height:1;margin-bottom:8px;}
+  .rsc .sm{font-size:.85rem;color:#888;}
+  .rsc .sp{font-size:.82rem;color:#a09080;margin-top:14px;line-height:1.6;font-style:italic;}
+  .rt{background:var(--card);border-radius:14px;padding:28px 24px;box-shadow:0 2px 16px rgba(58,46,42,.08);border:1px solid var(--bdr);margin-bottom:16px;}
+  .rt h3{font-size:1.15rem;font-weight:700;color:var(--pri);margin-bottom:12px;}
+  .rt .d{font-size:.9rem;color:var(--txt2);line-height:1.85;}
+  .rt .a{margin-top:16px;padding-top:16px;border-top:1px solid var(--bdr);font-size:.88rem;color:var(--pri);font-weight:600;line-height:1.7;}
+  .tc{background:var(--card);border-radius:14px;padding:28px 24px;box-shadow:0 2px 16px rgba(58,46,42,.08);border:1px solid var(--bdr);margin-bottom:16px;text-align:center;}
+  .tc .tl{font-size:.7rem;color:var(--acc);font-weight:700;letter-spacing:2px;margin-bottom:8px;}
+  .tc .ti{font-size:3.5rem;margin-bottom:10px;}
+  .tc .tn{font-size:1.4rem;font-weight:700;color:var(--pri);margin-bottom:6px;letter-spacing:1px;}
+  .tc .ts{font-size:.95rem;color:var(--acc);font-weight:600;margin-bottom:8px;}
+  .tc .t2{font-size:.85rem;color:var(--txt2);margin-bottom:16px;padding:10px 16px;background:#faf6f2;border-radius:8px;display:inline-block;}
+  .tc .td{font-size:.85rem;color:var(--txt2);line-height:1.8;text-align:left;}
+  .tc .tm{margin-top:16px;padding:14px 18px;background:linear-gradient(135deg,#faf6f2,#f5f0ec);border-radius:10px;font-size:.9rem;font-weight:600;color:var(--pri);font-style:italic;}
+  .wk{background:var(--card);border-radius:14px;padding:24px;box-shadow:0 2px 16px rgba(58,46,42,.08);border:1px solid var(--bdr);border-left:4px solid #c06b5a;margin-bottom:16px;}
+  .wk h4{font-size:.92rem;font-weight:700;color:#c06b5a;margin-bottom:8px;}
+  .wk p{font-size:.85rem;color:var(--txt2);line-height:1.8;}
+  .cc{background:var(--card);border-radius:14px;padding:28px 24px;box-shadow:0 2px 16px rgba(58,46,42,.08);border:1px solid var(--bdr);border-left:4px solid var(--acc);margin-bottom:16px;}
+  .cc h3{font-size:1rem;font-weight:700;color:var(--pri);margin-bottom:16px;line-height:1.5;}
+  .cc ul{list-style:none;padding:0;margin:0;}
+  .cc li{position:relative;padding-left:18px;margin-bottom:14px;font-size:.88rem;line-height:1.8;color:var(--txt2);}
+  .cc li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:var(--acc);}
+  .cc li b{color:var(--pri);font-weight:700;}
+  .cta{background:linear-gradient(160deg,#3a2e2a,#5a4a42);border-radius:14px;padding:32px 24px;text-align:center;color:#f0ece8;}
+  .cta h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.5;}
+  .cta p{font-size:.85rem;color:#c8bdb5;margin-bottom:20px;line-height:1.8;}
+  .cta a{display:inline-block;padding:14px 40px;background:var(--acc);color:#fff;font-size:.95rem;font-weight:700;border-radius:50px;text-decoration:none;}
+  .share{text-align:center;padding:20px 0;font-size:.8rem;color:#bbb;}
+  .footer{text-align:center;padding:20px 0 40px;font-size:.75rem;color:#ccc;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1><em>《底氣》</em>IPQ 自測</h1>
+  <p>IPQ（Internal Power Quotient）= 內隱力商數<br>白話說就是：當外在的標籤都被拿掉之後，你還剩多少底氣。<br><br>11 題，回想最近一個月的真實狀況就好。</p>
+</div>
+
+<div class="wrap">
+  <div class="intro" id="intro"><b>1</b> = 幾乎不會　<b>5</b> = 經常這樣<br>選你「現在的狀態」，不是你希望自己是什麼樣。<br>大部分人落在 22-33 分，這很正常。</div>
+
+  <form id="F">
+
+  <div class="dv">定錨 — 你在用誰的計分板？</div>
+
+  <div class="qc"><div class="qh"><span class="qn">1</span><div class="qt">別人的一句話（好的或壞的），會影響你一整天的心情嗎？</div></div><div class="qe">例：主管隨口說「還好」，你回家路上一直在想他什麼意思；朋友一句玩笑話你記了三天</div><div class="rg"><input type="radio" name="q1" value="1" id="q1a"><label for="q1a">1</label><input type="radio" name="q1" value="2" id="q1b"><label for="q1b">2</label><input type="radio" name="q1" value="3" id="q1c"><label for="q1c">3</label><input type="radio" name="q1" value="4" id="q1d"><label for="q1d">4</label><input type="radio" name="q1" value="5" id="q1e"><label for="q1e">5</label></div><div class="rl"><span>幾乎不會</span><span>經常這樣</span></div></div>
+
+  <div class="qc"><div class="qh"><span class="qn">2</span><div class="qt">你會不會因為怕別人怎麼看，而不敢做你真正想做的事？</div></div><div class="qe">例：想換工作但怕家人說話、想發文但怕被笑、想拒絕但怕得罪人</div><div class="rg"><input type="radio" name="q2" value="1" id="q2a"><label for="q2a">1</label><input type="radio" name="q2" value="2" id="q2b"><label for="q2b">2</label><input type="radio" name="q2" value="3" id="q2c"><label for="q2c">3</label><input type="radio" name="q2" value="4" id="q2d"><label for="q2d">4</label><input type="radio" name="q2" value="5" id="q2e"><label for="q2e">5</label></div><div class="rl"><span>幾乎不會</span><span>經常這樣</span></div></div>
+
+  <div class="qc"><div class="qh"><span class="qn">3</span><div class="qt">你會不會覺得，拿掉現在的工作、收入、和身邊的人之後，自己就沒有價值了？</div></div><div class="qe">這題不用舉例。對自己誠實就好。</div><div class="rg"><input type="radio" name="q3" value="1" id="q3a"><label for="q3a">1</label><input type="radio" name="q3" value="2" id="q3b"><label for="q3b">2</label><input type="radio" name="q3" value="3" id="q3c"><label for="q3c">3</label><input type="radio" name="q3" value="4" id="q3d"><label for="q3d">4</label><input type="radio" name="q3" value="5" id="q3e"><label for="q3e">5</label></div><div class="rl"><span>依然有價值</span><span>會覺得空了</span></div></div>
+
+  <div class="dv">煉化 — 你的情緒是在回收，還是一直在漏？</div>
+
+  <div class="qc"><div class="qh"><span class="qn">4</span><div class="qt">被否定或拒絕之後，你會在睡前還在回放那個畫面嗎？</div></div><div class="qe">不是在想怎麼改進，是反覆回放那個不舒服的感覺——他的表情、他的語氣、你當下的反應</div><div class="rg"><input type="radio" name="q4" value="1" id="q4a"><label for="q4a">1</label><input type="radio" name="q4" value="2" id="q4b"><label for="q4b">2</label><input type="radio" name="q4" value="3" id="q4c"><label for="q4c">3</label><input type="radio" name="q4" value="4" id="q4d"><label for="q4d">4</label><input type="radio" name="q4" value="5" id="q4e"><label for="q4e">5</label></div><div class="rl"><span>幾乎不會</span><span>經常這樣</span></div></div>
+
+  <div class="qc"><div class="qh"><span class="qn">5</span><div class="qt">明明知道對方不對，但你還是會反覆想那件事、生悶氣嗎？</div></div><div class="qe">例：被佔便宜、被搶功、被已讀不回——嘴上說算了，腦袋停不下來</div><div class="rg"><input type="radio" name="q5" value="1" id="q5a"><label for="q5a">1</label><input type="radio" name="q5" value="2" id="q5b"><label for="q5b">2</label><input type="radio" name="q5" value="3" id="q5c"><label for="q5c">3</label><input type="radio" name="q5" value="4" id="q5d"><label for="q5d">4</label><input type="radio" name="q5" value="5" id="q5e"><label for="q5e">5</label></div><div class="rl"><span>氣完就過了</span><span>悶好幾天</span></div></div>
+
+  <div class="qc"><div class="qh"><span class="qn">6</span><div class="qt">犯了錯或說錯話之後，你會反覆想「我當時為什麼不那樣做」嗎？</div></div><div class="qe">例：事後覺得自己反應很蠢、後悔沒說出口的話、一直重播那個尷尬的瞬間</div><div class="rg"><input type="radio" name="q6" value="1" id="q6a"><label for="q6a">1</label><input type="radio" name="q6" value="2" id="q6b"><label for="q6b">2</label><input type="radio" name="q6" value="3" id="q6c"><label for="q6c">3</label><input type="radio" name="q6" value="4" id="q6d"><label for="q6d">4</label><input type="radio" name="q6" value="5" id="q6e"><label for="q6e">5</label></div><div class="rl"><span>過了就過了</span><span>想好幾天</span></div></div>
+
+  <div class="dv">覺醒 — 你的時間精力花在對的地方嗎？</div>
+
+  <div class="qc"><div class="qh"><span class="qn">7</span><div class="qt">有人找你幫忙，你心裡不願意，但最後還是說了「好」？</div></div><div class="qe">例：同事丟事情給你、朋友半夜找你訴苦、家人要你做不想做的事——你不想但還是答應了</div><div class="rg"><input type="radio" name="q7" value="1" id="q7a"><label for="q7a">1</label><input type="radio" name="q7" value="2" id="q7b"><label for="q7b">2</label><input type="radio" name="q7" value="3" id="q7c"><label for="q7c">3</label><input type="radio" name="q7" value="4" id="q7d"><label for="q7d">4</label><input type="radio" name="q7" value="5" id="q7e"><label for="q7e">5</label></div><div class="rl"><span>我會拒絕</span><span>幾乎都答應</span></div></div>
+
+  <div class="qc"><div class="qh"><span class="qn">8</span><div class="qt">一段關係讓你不舒服，但你遲遲不敢處理或離開嗎？</div></div><div class="qe">例：消耗你的朋友、不健康的感情、讓你不開心的合作——你知道該處理但一直拖著</div><div class="rg"><input type="radio" name="q8" value="1" id="q8a"><label for="q8a">1</label><input type="radio" name="q8" value="2" id="q8b"><label for="q8b">2</label><input type="radio" name="q8" value="3" id="q8c"><label for="q8c">3</label><input type="radio" name="q8" value="4" id="q8d"><label for="q8d">4</label><input type="radio" name="q8" value="5" id="q8e"><label for="q8e">5</label></div><div class="rl"><span>果斷處理</span><span>一直拖著</span></div></div>
+
+  <div class="qc"><div class="qh"><span class="qn">9</span><div class="qt">跟某些人在一起，你會不自覺地「變小」嗎？</div></div><div class="qe">例：老闆、有錢的親戚、看起來很成功的人——你講話變客氣、不太敢說真話、不敢表達意見</div><div class="rg"><input type="radio" name="q9" value="1" id="q9a"><label for="q9a">1</label><input type="radio" name="q9" value="2" id="q9b"><label for="q9b">2</label><input type="radio" name="q9" value="3" id="q9c"><label for="q9c">3</label><input type="radio" name="q9" value="4" id="q9d"><label for="q9d">4</label><input type="radio" name="q9" value="5" id="q9e"><label for="q9e">5</label></div><div class="rl"><span>不會縮小</span><span>經常這樣</span></div></div>
+
+  <div class="dv">突變 — 你敢不敢往前走？</div>
+
+  <div class="qc"><div class="qh"><span class="qn">10</span><div class="qt">你有正在努力的事，但一直看不到結果，開始懷疑自己嗎？</div></div><div class="qe">例：經營三個月沒人看、一直對某人好但他不珍惜、投了履歷沒回音、練了很久沒進步</div><div class="rg"><input type="radio" name="q10" value="1" id="q10a"><label for="q10a">1</label><input type="radio" name="q10" value="2" id="q10b"><label for="q10b">2</label><input type="radio" name="q10" value="3" id="q10c"><label for="q10c">3</label><input type="radio" name="q10" value="4" id="q10d"><label for="q10d">4</label><input type="radio" name="q10" value="5" id="q10e"><label for="q10e">5</label></div><div class="rl"><span>不會懷疑</span><span>經常懷疑</span></div></div>
+
+  <div class="qc"><div class="qh"><span class="qn">11</span><div class="qt">你會不會因為看不到回報，就找理由暫停——然後就再也沒開始？</div></div><div class="qe">例：想健身但兩週沒變化就停了、想經營副業但沒人看就放棄了、想學東西但沒人鼓勵就算了</div><div class="rg"><input type="radio" name="q11" value="1" id="q11a"><label for="q11a">1</label><input type="radio" name="q11" value="2" id="q11b"><label for="q11b">2</label><input type="radio" name="q11" value="3" id="q11c"><label for="q11c">3</label><input type="radio" name="q11" value="4" id="q11d"><label for="q11d">4</label><input type="radio" name="q11" value="5" id="q11e"><label for="q11e">5</label></div><div class="rl"><span>會繼續做</span><span>常常放棄</span></div></div>
+
+  </form>
+
+  <div class="sw" id="sw">
+    <a href="javascript:void(0)" class="sb" id="sb" onclick="GO()">看結果</a>
+    <div class="sh" id="sh">全部填完就能看結果</div>
+  </div>
+
+  <div class="result" id="R">
+    <div class="rsc">
+      <div class="sl">你的 IPQ 分數</div>
+      <div class="sn" id="SN">0</div>
+      <div class="sm">/ 55</div>
+      <div class="sp">這個分數不是判決。它只是告訴你，你現在站在哪裡——以及你可以從哪裡開始。</div>
+    </div>
+    <div class="rt"><h3 id="TN"></h3><div class="d" id="TD"></div><div class="a" id="TA"></div></div>
+    <div class="tc">
+      <div class="tl">你的底氣類型</div>
+      <div class="ti" id="YI"></div>
+      <div class="tn" id="YN"></div>
+      <div class="ts" id="YS"></div>
+      <div class="t2" id="Y2"></div>
+      <div class="td" id="YD"></div>
+      <div class="tm" id="YM"></div>
+    </div>
+    <div class="wk" id="WK"><h4>你可能需要留意的地方</h4><p id="WD"></p></div>
+    <div class="cc" id="CC"><h3 id="CH"></h3><ul id="CI"></ul></div>
+    <div class="cta"><h3>《底氣》線上課程</h3><p>一套流程、四個問題。<br>不管遇到什麼事，跑一遍就能處理。<br>上完你就不需要任何人了，因為你自己會跑。</p><a href="#">了解課程 →</a></div>
+    <div class="share">截圖分享你的結果 → IG 限動</div>
+  </div>
+</div>
+
+<div class="footer">底氣 IPQ 自測 © 陳頌昊 Steve Chen</div>
+
+<script>
+function GO(){
+  var f=document.getElementById('F');
+  var vals={};var c=0;var firstMissing=-1;
+  for(var i=1;i<=11;i++){
+    var r=f.elements['q'+i];
+    if(r){for(var j=0;j<r.length;j++){if(r[j].checked){vals[i]=parseInt(r[j].value);c++;break;}}}
+    if(!vals[i]&&firstMissing<0) firstMissing=i;
+  }
+  if(c<11){
+    document.getElementById('sh').textContent='還有 '+(11-c)+' 題沒填';
+    document.getElementById('sh').style.color='#c06b5a';
+    var target=document.querySelector('[name=q'+firstMissing+']');
+    if(target&&target.parentNode&&target.parentNode.parentNode){
+      target.parentNode.parentNode.scrollIntoView({behavior:'smooth',block:'center'});
+      target.parentNode.parentNode.style.boxShadow='0 0 0 3px rgba(192,107,90,0.3)';
+      setTimeout(function(){target.parentNode.parentNode.style.boxShadow='';},2000);
+    }
+    return;
+  }
+  // Raw score (high = more 内耗)
+  var raw=0;for(var i=1;i<=11;i++) raw+=(vals[i]||0);
+  // IPQ score (high = more 底氣)
+  var ipq=55-raw;
+
+  document.getElementById('F').style.display='none';
+  document.getElementById('sw').style.display='none';
+  document.getElementById('intro').style.display='none';
+  document.getElementById('R').className='result show';
+  window.scrollTo(0,0);
+
+  // Animate score
+  var el=document.getElementById('SN'),cur=0,step=Math.max(1,Math.floor(ipq/25));
+  var iv=setInterval(function(){cur+=step;if(cur>=ipq){cur=ipq;clearInterval(iv);}el.textContent=cur;},35);
+
+  // Tier (based on IPQ score)
+  var tn,td,ta,ch,ci;
+  if(ipq<=10){
+    tn='你的底氣，幾乎完全在別人手上';
+    td='你的情緒、你的決定、你對自己的評價，幾乎都是別人說了算。一句話就能讓你崩一整天，一個眼神就能讓你懷疑自己。你不是不夠好——是你從來不知道你的好，不需要任何人的認證。';
+    ta='你現在最需要的，不是更努力，是找到那個不需要別人點頭的自己。';
+    ch='你可能還沒發現，你正在為別人活';
+    ci='<li><b>你的情緒、你的決定、你對自己的評價——仔細想想，有多少是你自己的？</b>他開心你就開心，他不高興你就焦慮。你以為這是「在乎」，但其實你的人生正在被別人遙控。</li><li><b>這堂課不是教你「不在意」，是教你分清楚</b>——哪些是你的事、哪些是別人的事。分清楚的那一刻，你會突然輕了很多。</li><li><b>你會拿到一套自己就能跑的流程</b>——四個問題，遇到任何事跑一遍。不用找人訴苦、不用等別人來救你。從這堂課開始，你為自己活。</li>';
+  }else if(ipq<=20){
+    tn='你的底氣，還在別人手上';
+    td='你有能力、也有行動力，但你的自我評價一直在隨著環境擺盪。別人對你好你就覺得自己不錯，別人冷落你你就開始自我懷疑。你很努力，但你的努力方向常常是「讓別人認可我」而不是「做我自己認為對的事」。';
+    ta='你需要一張屬於自己的計分板——上面只放你能控制的事。';
+    ch='你可能會想：「這些道理我都知道啊」';
+    ci='<li><b>你知道不該在意，但你還是在意。</b>——因為「不在意」是結論，沒有人教過你「怎麼做到不在意」。</li><li><b>這堂課教的是「怎麼做到」</b>——一套流程，四個問題。被否定的時候跑一遍、被消耗的時候跑一遍、看不到結果的時候還是跑一遍。同一套方法，處理所有事。</li><li><b>不是聽完覺得「好有道理」然後沒有然後</b>——你會帶走一份只屬於你的手冊，以後遇到事翻開來看，你自己就知道怎麼做。</li>';
+  }else if(ipq<=28){
+    tn='你很拚，但越拚越累';
+    td='你很努力，但你賺到的能量全部拿去付「情緒折舊費」了。別人一句否定，你花三天消化。你知道自己在內耗，但停不下來——因為你沒有一套方法讓自己停。你的問題不是不夠拚，是拚的方式在漏電。';
+    ta='你需要的是一套流程，在 60 秒內把打擊轉成行動，而不是讓它在腦袋裡住三天。';
+    ch='你缺的不是意志力，是一套方法';
+    ci='<li><b>你叫自己「不要想了」但停不下來</b>——因為你沒有一個讓大腦切換頻道的流程。這堂課給你一套四步流程，60 秒內把情緒轉成行動。</li><li><b>你知道該拒絕但說不出口</b>——因為你沒有練習過「怎麼說不而不翻臉」。這堂課會帶你練一次，練完你就知道怎麼做了。</li><li><b>你不是不夠努力，是努力的方式在漏電</b>——這堂課幫你找到那些你沒注意到的能量漏洞，把它們堵起來。</li>';
+  }else if(ipq<=36){
+    tn='偶爾有底氣，但容易被打回去';
+    td='你已經開始覺察了，狀態好的時候你很穩、很有主見。但被狠狠打一次就退回原點，信心要花好幾天才能重建。你的底氣像是天氣——晴天的時候你很強，但只要下一場雨，你就又縮回去了。';
+    ta='你差的不是底氣本身，是一套讓底氣「不退場」的系統。';
+    ch='你已經有底氣了——但它還不夠自動';
+    ci='<li><b>狀態好的時候你不需要任何人</b>——但問題是被打一次就要重新花三天把自己拉回來。這堂課讓你把「恢復」的時間從三天縮短到幾分鐘。</li><li><b>你不缺覺察，缺的是一套系統</b>——讓底氣不再靠狀態好壞決定，而是變成一個你隨時能啟動的流程。</li><li><b>自信和底氣的差別</b>——自信是「我覺得我可以」，被打臉三次就沒了。底氣是「就算失敗了，我也不會否定自己」。這堂課教你後者。</li>';
+  }else if(ipq<=44){
+    tn='底氣穩定，但偶爾會晃';
+    td='你大多數時候是穩的。別人的話你聽得進去但不會被帶走，遇到打擊你能比大多數人更快恢復。但在某些特定的情境——某個人、某種場合、某個你特別在意的領域——你的穩定會出現裂縫。你離真正的不可動搖，只差最後一步。';
+    ta='你需要的不是大修，是把最後那幾道裂縫補起來。';
+    ch='你已經很穩了——這堂課補最後那幾道裂縫';
+    ci='<li><b>你知道自己在哪些場景會晃</b>——某個人、某種場合、某個你特別在意的領域。這堂課讓你在那些場景裡也能穩住。</li><li><b>一套你可以反覆用的流程</b>——不是靠意志力撐，是有一個系統在背後自動運作。你會發現遇到事情的時候，你的反應速度比以前快了很多。</li><li><b>讓這套流程變成你的本能反應</b>——不需要刻意提醒自己，遇到事情的時候你會自動知道怎麼處理。</li>';
+  }else{
+    tn='你已經是自己的操盤手';
+    td='外界的聲音對你來說是參考，不是判決。你的底氣在自己身上，別人的評價動搖不了你的核心。你清楚你是誰、你要什麼、你在走什麼路。';
+    ta='你已經擁有底氣了。下一步是把它傳遞出去，影響你身邊的人。';
+    ch='你可能不需要這堂課——但你身邊一定有人需要';
+    ci='<li><b>想一個人</b>——那個被別人一句話就搞三天的朋友、那個什麼都幫但從來不會拒絕的家人、那個明明很優秀但永遠覺得自己不夠好的人。</li><li><b>把這個測驗傳給他</b>——有時候一個人改變不了自己，但一個對的工具可以。你的一個分享，可能是他的轉捩點。</li>';
+  }
+  document.getElementById('TN').textContent=tn;
+  document.getElementById('TD').textContent=td;
+  document.getElementById('TA').textContent=ta;
+  document.getElementById('CH').textContent=ch;
+  document.getElementById('CI').innerHTML=ci;
+
+  // Type calculation (based on RAW scores - higher raw = weaker in that area)
+  // Lowest raw = strongest area = your type
+  var sAnc=(vals[1]||0)+(vals[2]||0)+(vals[3]||0); // 定錨 Q1-3
+  var sRef=(vals[4]||0)+(vals[5]||0)+(vals[6]||0); // 煉化 Q4-6
+  var sAwk=(vals[7]||0)+(vals[8]||0)+(vals[9]||0); // 覺醒 Q7-9
+  var sLep=(vals[10]||0)+(vals[11]||0);             // 突變 Q10-11
+
+  // Normalize to per-question average
+  var nAnc=sAnc/3, nRef=sRef/3, nAwk=sAwk/3, nLep=sLep/2;
+
+  // Type = LOWEST score (strongest area)
+  var types=[
+    {k:'anc',v:nAnc,i:'🌊',n:'深海型',s:'你的強大在於定力',
+     d:'你的力量來自「靜止」與「吸收」。當外界的壓力湧入時，你不急於反擊，而是透過內在的穩定把壓力化為無形。在混亂的場面裡，你只要在那裡，別人就會覺得安心。你的底氣不是張揚型的——是那種不需要證明什麼的沉穩。',
+     m:'世界再吵，動不了我的核。'},
+    {k:'ref',v:nRef,i:'💧',n:'水銀型',s:'你的強大在於轉化',
+     d:'你的力量來自「流動」與「提煉」。你不跟環境對抗，而是像液體一樣穿過障礙。別人的攻擊到了你手上都會被重新解讀、重新利用。你最厲害的地方是：能把最糟糕的局面變成對自己有用的東西。',
+     m:'沒有傷害，只有還沒被提煉的數據。'},
+    {k:'awk',v:nAwk,i:'🔥',n:'火焰型',s:'你的強大在於覺察',
+     d:'你的力量來自「看見」與「清醒」。你能在別人還在情緒裡打轉的時候就已經看清楚局面。你知道什麼值得在意、什麼不值得。你的底氣來自你對自己和世界都有一份清晰的理解——你不容易被話術或假象動搖。',
+     m:'看透不說透，是最高級的底氣。'},
+    {k:'lep',v:nLep,i:'⚡',n:'雷霆型',s:'你的強大在於執行',
+     d:'你的力量來自「動能」與「行動」。當目標出現時，你會切斷所有雜訊直接去做。你不太花時間猶豫，也不太需要別人的鼓勵。在所有人都在「想」的時候，你已經在「做」了。',
+     m:'當我出手，環境為我讓路。'}
+  ];
+
+  // Sort: lowest raw = strongest = primary type
+  types.sort(function(a,b){return a.v-b.v;});
+  var primary=types[0];
+  var secondary=types[1];
+
+  document.getElementById('YI').textContent=primary.i;
+  document.getElementById('YN').textContent=primary.n;
+  document.getElementById('YS').textContent=primary.s;
+  // Secondary type combo descriptions
+  var combos={
+    '深海型_水銀型':'你的核心是穩定，但你也很懂得把壓力轉化成可以用的東西。你不只扛得住，還會把打擊變成養分。',
+    '深海型_火焰型':'你的核心是穩定，同時你的覺察力也很強。你穩，而且你知道自己為什麼穩。',
+    '深海型_雷霆型':'你的核心是穩定，但必要的時候你也敢衝。你不是只會守——需要出手的時候你不會猶豫。',
+    '水銀型_深海型':'你最擅長轉化，同時你的內核也有一份不容易被動搖的沉穩。你能屈能伸，但你有底線。',
+    '水銀型_火焰型':'你最擅長轉化，而且你看得很清楚。你不只能把壞事變好事——你還知道為什麼它會變成好事。',
+    '水銀型_雷霆型':'你最擅長轉化，而且你的行動力也很強。想通了你就動，不拖泥帶水。',
+    '火焰型_深海型':'你的覺察力很強，同時你也有一份深層的穩定感。你看得清楚，而且不容易被看到的東西嚇到。',
+    '火焰型_水銀型':'你的覺察力很強，而且你很懂得把看到的東西轉化成對自己有利的行動。你不只看得到問題，還會把問題變成資源。',
+    '火焰型_雷霆型':'你看得清楚，而且你敢動。很多人是看到了但不敢做，你是看到了就去做。',
+    '雷霆型_深海型':'你的行動力是你最大的武器，而且你有一份內在的穩定在支撐。你衝得快，但你的根紮得住。',
+    '雷霆型_水銀型':'你敢衝，而且你很會在過程中調整方向。你不怕做錯，因為你知道做錯了你也轉得過來。',
+    '雷霆型_火焰型':'你敢衝，而且你看得到全局。你的行動不是盲目的——你知道自己在做什麼、為什麼做。'
+  };
+  var comboKey=primary.n+'_'+secondary.n;
+  var comboDesc=combos[comboKey]||'';
+  document.getElementById('Y2').innerHTML='副型：'+secondary.n+' '+secondary.i+'<br><span style="font-size:.82rem;color:#6b5b52;font-weight:400;">'+comboDesc+'</span>';
+  document.getElementById('YD').textContent=primary.d;
+  document.getElementById('YM').textContent='「'+primary.m+'」';
+
+  // Weakest area (highest raw = most 内耗) - ALWAYS show specific weakness
+  var weakest=types[3];
+  var strongest=types[0];
+  // Different descriptions based on primary type + weakest combo
+  var weakDescs={
+    'anc':{
+      '深海型':'你的內核其實很穩——但你知道嗎？你最脆弱的時刻，不是遇到大事的時候，是某個你在乎的人隨口一句否定的時候。那個裂縫很小，但它會讓你在深夜反覆想：「他是不是覺得我不夠好？」你的穩定是真的，但它還有一個沒被保護好的入口。',
+      '水銀型':'你很擅長把打擊轉化成養分——但有些話，在你來得及轉化之前，就已經刺進去了。你事後能處理得很好，問題是那個「被刺到的瞬間」，你完全沒有防備。你的轉化能力是強的，但你缺一道在第一時間就擋住的牆。',
+      '火焰型':'你比大多數人都更清楚「別人的話不代表你的價值」——但清楚歸清楚，你的身體還是會有反應。理智上你知道他說的不對，情緒上你還是被帶走了。最讓你累的不是那句話本身，是你明明看透了卻還是會痛。',
+      '雷霆型':'你的行動力很強，但你有沒有注意過——有些時候你拼命做，不是因為你想做，是因為你想證明「那個否定你的人是錯的」。這個動力很猛，但也很危險，因為哪天你不需要證明了，你可能就不動了。'
+    },
+    'ref':{
+      '深海型':'你看起來永遠都很穩，但你身邊的人可能不知道——你把情緒藏得很深。你不是不痛，你只是不說。問題是那些被你壓下去的東西，並沒有消失，它們在暗處慢慢侵蝕你的能量。你會開始覺得：明明沒發生什麼大事，但整個人就是提不起勁。',
+      '水銀型':'大部分的打擊你都處理得很快——但有那麼幾個人、幾句話，你怎麼轉都轉不掉。通常那個人是你最在乎的人。他說的話卡在你腦袋裡好幾天，你知道不該再想了，但就是停不下來。你轉得掉全世界的攻擊，唯獨轉不掉他的。',
+      '火焰型':'你很清楚你的情緒從哪裡來，也知道它在告訴你什麼——但「知道」和「放下」之間，有一段你還沒走通的路。你可以精準分析自己為什麼難過，但分析完了你還是難過。你缺的不是覺察力，是一個把情緒「轉出去」的動作。',
+      '雷霆型':'你習慣用行動壓過情緒——不舒服就去做事、去忙、去衝。但有些夜晚，當你停下來的時候，那些你以為已經過去的事，會一次全部回來。你不是沒有情緒，是你一直在跑，沒有給自己時間處理。'
+    },
+    'awk':{
+      '深海型':'因為你太穩了，所以所有人都來靠你。你是朋友的垃圾桶、同事的救火隊、家人的主心骨。你扛得住——但你已經很久沒問過自己累不累了。你的善良撐起了所有人，但沒有人在撐你。再穩的人，也有被掏空的一天。',
+      '水銀型':'你太會配合了——配合到別人都以為你「真的沒關係」。但你有關係，你很有關係，你只是從來不說。你笑著答應的每一次，心裡都在扣分。等到有天你突然爆發，所有人都會說「你不是說沒關係嗎」——因為你從來沒讓他們知道你的底線在哪。',
+      '火焰型':'你看得到這段關係正在消耗你——你甚至能精準描述問題出在哪。但你就是不處理。不是因為你不敢，是因為你在等一個「不會傷害任何人」的完美時機。但那個時機不會來。而你在等待的每一天，都在付出代價。',
+      '雷霆型':'工作上你很果斷——要砍就砍、要推就推。但面對關係，你的果斷會消失。你可以炒掉一個不適任的員工，但你沒辦法跟一個消耗你的朋友說「我不想再這樣了」。因為你怕的不是衝突，是失去。而這個「怕失去」，正在讓你失去更多。'
+    },
+    'lep':{
+      '深海型':'你的穩定是你的武器，但有時候也是你的枷鎖。因為你太穩了，所以你不太願意冒險。你在等所有條件都到位才出手——但真實世界不會等你準備好。你最大的風險，不是做錯，是什麼都沒做。那些你「還在考慮」的事，別人已經做完了。',
+      '水銀型':'你很聰明，選項也很多——但你換方向換得太頻繁了。A 做三個月沒結果換 B，B 做兩個月又想試 C。你不是沒有能力做到，是你從來沒有在一條路上待夠久。你缺的不是更好的方向，是在同一個方向上再多撐三個月的耐心。',
+      '火焰型':'你看得到終點在哪，也看得到路上有多少坑。問題是——你看得太清楚了，清楚到你不敢出發。別人是走到坑的時候才怕，你是還沒走就已經在怕了。你以為你在「謹慎評估」，但其實你在「用分析代替行動」。看到風險不是問題，讓風險擋住你才是。',
+      '雷霆型':'你很敢衝——但你的油箱靠的是「回報」。有掌聲你就跑得飛快，沒掌聲你就熄火了。你放棄的那些事，通常不是因為做不到，是因為太久沒人拍手。最可惜的不是失敗，是你其實離成功只剩一步，卻因為沒人看見就停下來了。'
+    }
+  };
+  var wk=weakDescs[weakest.k];
+  var wText=wk[primary.n]||wk['default'];
+  document.getElementById('WD').textContent=wText;
+}
+</script>
+</body>
+</html>
