@@ -16,6 +16,12 @@
   .wrap{max-width:520px;margin:0 auto;padding:0 20px;}
   .intro{text-align:center;padding:28px 0 8px;font-size:.88rem;color:var(--txt2);}
   .intro b{color:var(--pri);}
+  .demo{padding:20px 0 8px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .demo select,.demo input{font-family:inherit;font-size:.88rem;color:var(--txt);background:var(--card);border:1.5px solid var(--bdr);border-radius:10px;padding:10px 14px;outline:none;transition:border-color .15s;}
+  .demo select:focus,.demo input:focus{border-color:var(--acc);}
+  .demo select{min-width:120px;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a09585' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;}
+  .demo input{flex:1;min-width:140px;max-width:200px;}
+  .demo .dl{font-size:.72rem;color:#b0a598;margin-left:4px;}
   .dv{text-align:center;padding:24px 0 8px;font-size:.75rem;color:var(--acc);font-weight:700;letter-spacing:2px;}
   .qc{background:var(--card);border-radius:14px;padding:24px 22px;margin-bottom:14px;box-shadow:0 2px 16px rgba(58,46,42,.08);border:1px solid var(--bdr);}
   .qh{display:flex;gap:12px;margin-bottom:6px;}
@@ -78,6 +84,18 @@
   <div class="intro" id="intro">選你「現在的狀態」，不是你希望自己是什麼樣。<br>大部分人落在 14-24 分，這很正常。</div>
 
   <form id="F">
+
+  <div class="demo">
+    <select id="age" name="age">
+      <option value="" disabled selected>年齡</option>
+      <option value="18-24">18-24 歲</option>
+      <option value="25-30">25-30 歲</option>
+      <option value="31-36">31-36 歲</option>
+      <option value="37-45">37-45 歲</option>
+      <option value="46+">46 歲以上</option>
+    </select>
+    <input type="text" id="job" name="job" placeholder="職業（選填）" maxlength="20">
+  </div>
 
   <div class="dv">定錨 — 拿掉標籤，你還剩什麼？</div>
 
