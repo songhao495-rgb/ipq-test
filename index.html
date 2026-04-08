@@ -330,6 +330,30 @@ function GO(){
   var wk=weakDescs[weakest.k];
   var wText=wk[primary.n]||wk['default'];
   document.getElementById('WD').textContent=wText;
+
+  // 送資料到 Google Sheets
+  var SHEET_URL='https://script.google.com/macros/s/AKfycbwSZ-YHf_-pZTBWtziTVjlFeE8rrZlOCFwSl_YFiTVrcu2hWyi4UsvLeKs0pHzdneQ5/exec';
+  if(SHEET_URL.indexOf('__')===0) return; // 尚未設定就跳過
+  var weakNames={anc:'定錨',ref:'煉化',awk:'覺醒',lep:'突變'};
+  var tierShort=tn.substring(0,15);
+  try{
+    fetch(SHEET_URL,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        age:document.getElementById('age').value||'',
+        job:document.getElementById('job').value||'',
+        q1:vals[1],q2:vals[2],q3:vals[3],q4:vals[4],q5:vals[5],q6:vals[6],
+        q7:vals[7],q8:vals[8],q9:vals[9],q10:vals[10],q11:vals[11],q12:vals[12],
+        ipq:ipq,
+        tier:tierShort,
+        primaryType:primary.n,
+        secondaryType:secondary.n,
+        weakest:weakNames[weakest.k]||''
+      })
+    });
+  }catch(e){}
 }
 </script>
 </body>
