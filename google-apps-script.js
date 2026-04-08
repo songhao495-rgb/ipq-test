@@ -17,12 +17,16 @@ function doPost(e) {
     sheet.setFrozenRows(1);
   }
 
-  var raw = e.postData.contents;
+  var raw;
+  if (e.parameter && e.parameter.payload) {
+    raw = e.parameter.payload;
+  } else {
+    raw = e.postData.contents;
+  }
   var data;
   try {
     data = JSON.parse(raw);
   } catch (err) {
-    // sendBeacon 有時會包在陣列裡
     try { data = JSON.parse(raw.replace(/^\[|\]$/g, '')); } catch (e2) { return ContentService.createTextOutput('parse error'); }
   }
 
