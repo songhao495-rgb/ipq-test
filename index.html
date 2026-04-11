@@ -16,12 +16,6 @@
   .wrap{max-width:520px;margin:0 auto;padding:0 20px;}
   .intro{text-align:center;padding:28px 0 8px;font-size:.88rem;color:var(--txt2);}
   .intro b{color:var(--pri);}
-  .demo{padding:20px 0 8px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-  .demo select,.demo input{font-family:inherit;font-size:.88rem;color:var(--txt);background:var(--card);border:1.5px solid var(--bdr);border-radius:10px;padding:10px 14px;outline:none;transition:border-color .15s;}
-  .demo select:focus,.demo input:focus{border-color:var(--acc);}
-  .demo select{min-width:120px;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a09585' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;}
-  .demo input{flex:1;min-width:140px;max-width:200px;}
-  .demo .dl{font-size:.72rem;color:#b0a598;margin-left:4px;}
   .dv{text-align:center;padding:24px 0 8px;font-size:.75rem;color:var(--acc);font-weight:700;letter-spacing:2px;}
   .qc{background:var(--card);border-radius:14px;padding:24px 22px;margin-bottom:14px;box-shadow:0 2px 16px rgba(58,46,42,.08);border:1px solid var(--bdr);}
   .qh{display:flex;gap:12px;margin-bottom:6px;}
@@ -53,9 +47,11 @@
   .tc .ti{font-size:3.5rem;margin-bottom:10px;}
   .tc .tn{font-size:1.4rem;font-weight:700;color:var(--pri);margin-bottom:6px;letter-spacing:1px;}
   .tc .ts{font-size:.95rem;color:var(--acc);font-weight:600;margin-bottom:8px;}
-  .tc .t2{font-size:.85rem;color:var(--txt2);margin-bottom:16px;padding:10px 16px;background:#faf6f2;border-radius:8px;display:inline-block;}
   .tc .td{font-size:.85rem;color:var(--txt2);line-height:1.8;text-align:left;}
   .tc .tm{margin-top:16px;padding:14px 18px;background:linear-gradient(135deg,#faf6f2,#f5f0ec);border-radius:10px;font-size:.9rem;font-weight:600;color:var(--pri);font-style:italic;}
+  .tp{background:var(--card);border-radius:14px;padding:20px 24px;box-shadow:0 2px 16px rgba(58,46,42,.08);border:1px solid var(--bdr);margin-bottom:16px;}
+  .tpl{font-size:.82rem;color:var(--txt2);line-height:1.8;padding:6px 0;}
+  .tpl b{color:var(--pri);}
   .wk{background:var(--card);border-radius:14px;padding:24px;box-shadow:0 2px 16px rgba(58,46,42,.08);border:1px solid var(--bdr);border-left:4px solid #c06b5a;margin-bottom:16px;}
   .wk h4{font-size:.92rem;font-weight:700;color:#c06b5a;margin-bottom:8px;}
   .wk p{font-size:.85rem;color:var(--txt2);line-height:1.8;}
@@ -77,7 +73,7 @@
 
 <div class="hero">
   <h1><em>《底氣》</em>IPQ 自測</h1>
-  <p>IPQ（Internal Power Quotient）= 內隱力商數<br>白話說就是：當外在的標籤都被拿掉之後，你還剩多少底氣。<br><br>12 題，回想最近一個月的真實狀況就好。</p>
+  <p>IPQ（Internal Power Quotient）= 內隱力商數<br>簡單說：當外在的標籤都被拿掉之後，你還剩多少底氣。<br><br>12 題，回想最近一個月的真實狀況就好。</p>
 </div>
 
 <div class="wrap">
@@ -85,33 +81,21 @@
 
   <form id="F">
 
-  <div class="demo">
-    <select id="age" name="age">
-      <option value="" disabled selected>年齡</option>
-      <option value="18-24">18-24 歲</option>
-      <option value="25-30">25-30 歲</option>
-      <option value="31-36">31-36 歲</option>
-      <option value="37-45">37-45 歲</option>
-      <option value="46+">46 歲以上</option>
-    </select>
-    <input type="text" id="job" name="job" placeholder="職業（選填）" maxlength="20">
-  </div>
-
   <div class="dv">定錨 — 拿掉標籤，你還剩什麼？</div>
 
   <div class="qc"><div class="qh"><span class="qn">1</span><div class="qt">別人的一句話（好的或壞的），會影響你一整天的心情嗎？</div></div><div class="qe">例：主管隨口說「還好」，你回家路上一直在想他什麼意思；朋友一句玩笑話你記了三天</div><div class="rg"><div class="ro"><input type="radio" name="q1" value="1" id="q1a"><label for="q1a">1</label><span class="rlb">很少</span></div><div class="ro"><input type="radio" name="q1" value="2" id="q1b"><label for="q1b">2</label><span class="rlb">偶爾</span></div><div class="ro"><input type="radio" name="q1" value="3" id="q1c"><label for="q1c">3</label><span class="rlb">蠻常的</span></div><div class="ro"><input type="radio" name="q1" value="4" id="q1d"><label for="q1d">4</label><span class="rlb">幾乎每次</span></div></div></div>
 
   <div class="qc"><div class="qh"><span class="qn">2</span><div class="qt">你會不會因為怕別人怎麼看，而不敢做你真正想做的事？</div></div><div class="qe">例：想換工作但怕家人說話、想發文但怕被笑、想拒絕但怕得罪人</div><div class="rg"><div class="ro"><input type="radio" name="q2" value="1" id="q2a"><label for="q2a">1</label><span class="rlb">很少</span></div><div class="ro"><input type="radio" name="q2" value="2" id="q2b"><label for="q2b">2</label><span class="rlb">偶爾</span></div><div class="ro"><input type="radio" name="q2" value="3" id="q2c"><label for="q2c">3</label><span class="rlb">蠻常的</span></div><div class="ro"><input type="radio" name="q2" value="4" id="q2d"><label for="q2d">4</label><span class="rlb">幾乎每次</span></div></div></div>
 
-  <div class="qc"><div class="qh"><span class="qn">3</span><div class="qt">你會不會覺得，拿掉現在的工作、收入、和身邊的人之後，自己就沒有價值了？</div></div><div class="qe">這題不用舉例。對自己誠實就好。</div><div class="rg"><div class="ro"><input type="radio" name="q3" value="1" id="q3a"><label for="q3a">1</label><span class="rlb">不會</span></div><div class="ro"><input type="radio" name="q3" value="2" id="q3b"><label for="q3b">2</label><span class="rlb">有一點</span></div><div class="ro"><input type="radio" name="q3" value="3" id="q3c"><label for="q3c">3</label><span class="rlb">蠻明顯的</span></div><div class="ro"><input type="radio" name="q3" value="4" id="q3d"><label for="q3d">4</label><span class="rlb">完全是</span></div></div></div>
+  <div class="qc"><div class="qh"><span class="qn">3</span><div class="qt">拿掉現在的工作、收入、和身邊的人，你還清不清楚自己的價值在哪裡？</div></div><div class="qe">不是問你「有沒有價值」——是你說不說得出來，你的價值是什麼</div><div class="rg"><div class="ro"><input type="radio" name="q3" value="1" id="q3a"><label for="q3a">1</label><span class="rlb">很清楚</span></div><div class="ro"><input type="radio" name="q3" value="2" id="q3b"><label for="q3b">2</label><span class="rlb">大概知道</span></div><div class="ro"><input type="radio" name="q3" value="3" id="q3c"><label for="q3c">3</label><span class="rlb">不太確定</span></div><div class="ro"><input type="radio" name="q3" value="4" id="q3d"><label for="q3d">4</label><span class="rlb">完全不知道</span></div></div></div>
 
   <div class="dv">煉化 — 把挫折變成專屬於你的武器</div>
 
   <div class="qc"><div class="qh"><span class="qn">4</span><div class="qt">事情搞砸之後，你一邊在補救，腦袋裡會不會同時有個聲音在說「我是不是真的不行」？</div></div><div class="qe">例：報告被退回來你在改，但一邊改一邊想「主管是不是覺得我很廢」</div><div class="rg"><div class="ro"><input type="radio" name="q4" value="1" id="q4a"><label for="q4a">1</label><span class="rlb">很少</span></div><div class="ro"><input type="radio" name="q4" value="2" id="q4b"><label for="q4b">2</label><span class="rlb">偶爾</span></div><div class="ro"><input type="radio" name="q4" value="3" id="q4c"><label for="q4c">3</label><span class="rlb">蠻常的</span></div><div class="ro"><input type="radio" name="q4" value="4" id="q4d"><label for="q4d">4</label><span class="rlb">幾乎每次</span></div></div></div>
 
-  <div class="qc"><div class="qh"><span class="qn">5</span><div class="qt">結果不好的時候，你比較常想的是「這件事哪裡出錯」還是「我這個人是不是不行」？</div></div><div class="qe">例：被拒絕、搞砸了、投資虧了——你第一反應是檢討事情，還是懷疑自己？</div><div class="rg"><div class="ro"><input type="radio" name="q5" value="1" id="q5a"><label for="q5a">1</label><span class="rlb">先看哪裡出錯</span></div><div class="ro"><input type="radio" name="q5" value="2" id="q5b"><label for="q5b">2</label><span class="rlb">偏看事情</span></div><div class="ro"><input type="radio" name="q5" value="3" id="q5c"><label for="q5c">3</label><span class="rlb">偏懷疑自己</span></div><div class="ro"><input type="radio" name="q5" value="4" id="q5d"><label for="q5d">4</label><span class="rlb">懷疑自己</span></div></div></div>
+  <div class="qc"><div class="qh"><span class="qn">5</span><div class="qt">結果不好的時候，你比較常想的是「這件事哪裡出錯」還是「我這個人是不是不行」？</div></div><div class="qe">例：被拒絕、搞砸了、投資虧了——你第一反應是檢討事情，還是懷疑自己？</div><div class="rg"><div class="ro"><input type="radio" name="q5" value="1" id="q5a"><label for="q5a">1</label><span class="rlb">先看哪裡出錯</span></div><div class="ro"><input type="radio" name="q5" value="2" id="q5b"><label for="q5b">2</label><span class="rlb">偏看事情</span></div><div class="ro"><input type="radio" name="q5" value="3" id="q5c"><label for="q5c">3</label><span class="rlb">偏想自己</span></div><div class="ro"><input type="radio" name="q5" value="4" id="q5d"><label for="q5d">4</label><span class="rlb">直接怪自己</span></div></div></div>
 
-  <div class="qc"><div class="qh"><span class="qn">6</span><div class="qt">你在努力改進一件事的時候，心裡是踏實的，還是悶的？</div></div><div class="qe">例：分手後在調整自己了，但越調整心裡越悶；工作被唸之後改了，但帶著一肚子氣在改</div><div class="rg"><div class="ro"><input type="radio" name="q6" value="1" id="q6a"><label for="q6a">1</label><span class="rlb">很踏實</span></div><div class="ro"><input type="radio" name="q6" value="2" id="q6b"><label for="q6b">2</label><span class="rlb">還好</span></div><div class="ro"><input type="radio" name="q6" value="3" id="q6c"><label for="q6c">3</label><span class="rlb">有點悶</span></div><div class="ro"><input type="radio" name="q6" value="4" id="q6d"><label for="q6d">4</label><span class="rlb">很悶</span></div></div></div>
+  <div class="qc"><div class="qh"><span class="qn">6</span><div class="qt">你在改進自己的時候，是因為「我想變更好」，還是因為「我不想再被唸了」？</div></div><div class="qe">工作被退了你去改，你改的動力是「不想再被否定」還是「這裡確實可以更好」；感情裡對方說你都不關心，你開始噓寒問暖，但心裡想的是「這樣你總滿意了吧」</div><div class="rg"><div class="ro"><input type="radio" name="q6" value="1" id="q6a"><label for="q6a">1</label><span class="rlb">為了變好</span></div><div class="ro"><input type="radio" name="q6" value="2" id="q6b"><label for="q6b">2</label><span class="rlb">偏為了變好</span></div><div class="ro"><input type="radio" name="q6" value="3" id="q6c"><label for="q6c">3</label><span class="rlb">偏怕被唸</span></div><div class="ro"><input type="radio" name="q6" value="4" id="q6d"><label for="q6d">4</label><span class="rlb">就是怕被唸</span></div></div></div>
 
   <div class="dv">覺醒 — 真正的底氣，不需要任何人確認</div>
 
@@ -123,9 +107,9 @@
 
   <div class="dv">突變 — 用底氣拿回人生主場權</div>
 
-  <div class="qc"><div class="qh"><span class="qn">10</span><div class="qt">當你知道某件事對自己有幫助，你通常會馬上開始，還是一直拖著沒動？</div></div><div class="qe">例：想運動但一直沒去、想學一個技能但一直說下個月、想跟某個人說清楚但一直找不到時機</div><div class="rg"><div class="ro"><input type="radio" name="q10" value="1" id="q10a"><label for="q10a">1</label><span class="rlb">馬上開始</span></div><div class="ro"><input type="radio" name="q10" value="2" id="q10b"><label for="q10b">2</label><span class="rlb">想一下就動</span></div><div class="ro"><input type="radio" name="q10" value="3" id="q10c"><label for="q10c">3</label><span class="rlb">常常拖著</span></div><div class="ro"><input type="radio" name="q10" value="4" id="q10d"><label for="q10d">4</label><span class="rlb">一直沒動</span></div></div></div>
+  <div class="qc"><div class="qh"><span class="qn">10</span><div class="qt">當你知道某件事對自己有幫助，你通常會馬上開始，還是一直拖著沒動？</div></div><div class="qe">例：想運動但一直沒去、想學一個技能但一直說下個月、想跟某個人說清楚但一直找不到時機</div><div class="rg"><div class="ro"><input type="radio" name="q10" value="1" id="q10a"><label for="q10a">1</label><span class="rlb">馬上開始</span></div><div class="ro"><input type="radio" name="q10" value="2" id="q10b"><label for="q10b">2</label><span class="rlb">會拖一下</span></div><div class="ro"><input type="radio" name="q10" value="3" id="q10c"><label for="q10c">3</label><span class="rlb">常常拖很久</span></div><div class="ro"><input type="radio" name="q10" value="4" id="q10d"><label for="q10d">4</label><span class="rlb">幾乎都沒動</span></div></div></div>
 
-  <div class="qc"><div class="qh"><span class="qn">11</span><div class="qt">當你努力了一陣子卻看不到成果，你會調整方式繼續試，還是慢慢就不做了？</div></div><div class="qe">例：健身一個月沒什麼變化就停了、經營副業前期回報不好就算了、學一個東西遇到瓶頸就不學了</div><div class="rg"><div class="ro"><input type="radio" name="q11" value="1" id="q11a"><label for="q11a">1</label><span class="rlb">調整再試</span></div><div class="ro"><input type="radio" name="q11" value="2" id="q11b"><label for="q11b">2</label><span class="rlb">多撐一下</span></div><div class="ro"><input type="radio" name="q11" value="3" id="q11c"><label for="q11c">3</label><span class="rlb">容易放掉</span></div><div class="ro"><input type="radio" name="q11" value="4" id="q11d"><label for="q11d">4</label><span class="rlb">直接不做了</span></div></div></div>
+  <div class="qc"><div class="qh"><span class="qn">11</span><div class="qt">當你努力了一陣子卻看不到成果，你會調整方式繼續試，還是慢慢就不做了？</div></div><div class="qe">例：健身一個月沒什麼變化就停了、經營副業前期回報不好就算了、學一個東西遇到瓶頸就不學了</div><div class="rg"><div class="ro"><input type="radio" name="q11" value="1" id="q11a"><label for="q11a">1</label><span class="rlb">換方式繼續</span></div><div class="ro"><input type="radio" name="q11" value="2" id="q11b"><label for="q11b">2</label><span class="rlb">會再試一下</span></div><div class="ro"><input type="radio" name="q11" value="3" id="q11c"><label for="q11c">3</label><span class="rlb">常常就放了</span></div><div class="ro"><input type="radio" name="q11" value="4" id="q11d"><label for="q11d">4</label><span class="rlb">幾乎都放掉</span></div></div></div>
 
   <div class="qc"><div class="qh"><span class="qn">12</span><div class="qt">你做決定的時候，是要計劃到覺得有把握才行動，還是先做再說、錯了再改？</div></div><div class="qe">例：換工作想了半年還在想、想告白想了三個月還沒說、想開始一件事但一直在「做功課」</div><div class="rg"><div class="ro"><input type="radio" name="q12" value="1" id="q12a"><label for="q12a">1</label><span class="rlb">先做的</span></div><div class="ro"><input type="radio" name="q12" value="2" id="q12b"><label for="q12b">2</label><span class="rlb">偏先做</span></div><div class="ro"><input type="radio" name="q12" value="3" id="q12c"><label for="q12c">3</label><span class="rlb">偏等的</span></div><div class="ro"><input type="radio" name="q12" value="4" id="q12d"><label for="q12d">4</label><span class="rlb">等把握</span></div></div></div>
 
@@ -137,6 +121,21 @@
   </div>
 
   <div class="result" id="R">
+    <div class="tc">
+      <div class="tl" id="TL">你的底氣類型</div>
+      <div class="ti" id="YI"></div>
+      <div class="tn" id="YN"></div>
+      <div class="ts" id="YS"></div>
+      <div class="tp2" id="TP2" style="display:none;font-size:.82rem;color:var(--acc);margin-bottom:12px;line-height:1.6;"></div>
+      <div class="td" id="YD"></div>
+      <div class="tm" id="YM"></div>
+    </div>
+    <div class="tp" id="TP">
+      <div class="tpl">⚓ <b>定海者</b> — 別人慌的時候你不會慌。你的底氣來自穩定。</div>
+      <div class="tpl">🔥 <b>淬煉者</b> — 每次摔完你都帶走東西。你的底氣來自經歷。</div>
+      <div class="tpl">👁️ <b>洞察者</b> — 別人還在情緒裡，你已經看清楚了。你的底氣來自清醒。</div>
+      <div class="tpl">⚡ <b>破局者</b> — 別人還在想，你已經在做了。你的底氣來自行動。</div>
+    </div>
     <div class="rsc">
       <div class="sl">你的 IPQ 分數</div>
       <div class="sn" id="SN">0</div>
@@ -144,17 +143,8 @@
       <div class="sp">這個分數不是判決。它只是告訴你，你現在站在哪裡——以及你可以從哪裡開始。</div>
     </div>
     <div class="rt"><h3 id="TN"></h3><div class="d" id="TD"></div><div class="a" id="TA"></div></div>
-    <div class="tc">
-      <div class="tl">你的底氣類型</div>
-      <div class="ti" id="YI"></div>
-      <div class="tn" id="YN"></div>
-      <div class="ts" id="YS"></div>
-      <div class="t2" id="Y2"></div>
-      <div class="td" id="YD"></div>
-      <div class="tm" id="YM"></div>
-    </div>
     <div class="wk" id="WK"><h4>你可能需要留意的地方</h4><p id="WD"></p></div>
-    <div class="cc" id="CC"><h3 id="CH"></h3><ul id="CI"></ul></div>
+    <div class="cc" id="BR"><h3 id="BH"></h3><div id="BT" style="font-size:.88rem;line-height:1.8;color:var(--txt2);"></div></div>
     <div class="cta"><h3>《底氣》線上課程</h3><p>一套法則，四步流程。<br>不管遇到什麼事，跑一遍，你就知道下一步該怎麼走。<br>上完之後你不需要找人訴苦、不需要等人來救——你自己就是自己的解法。</p><a href="#">了解課程 →</a></div>
     <div class="share">截圖分享你的結果 → IG 限動</div>
   </div>
@@ -198,49 +188,49 @@ function GO(){
   var iv=setInterval(function(){cur+=step;if(cur>=ipq){cur=ipq;clearInterval(iv);}el.textContent=cur;},35);
 
   // Tier (based on IPQ score)
-  var tn,td,ta,ch,ci;
+  var tn,td,ta,bh,bt;
   if(ipq<=6){
     tn='你的底氣，幾乎完全在別人手上';
-    td='你的情緒、你的決定、你對自己的評價，幾乎都是別人說了算。一句話就能讓你崩一整天，一個眼神就能讓你懷疑自己。你不是不夠好——是你從來不知道你的好，不需要任何人的認證。';
+    td='別人的一句評價、一個反饋，就能讓你整天不對勁。甚至不用到評價——一個眼神、一個語氣、已讀不回，你都能想半天。你不是玻璃心——是你一直在用別人的反應來決定自己好不好。你的好壞從來不是你自己說了算的。但問題不是你不夠好。是你從來沒有自己確認過。';
     ta='你現在最需要的，不是更努力，是找到那個不需要別人點頭的自己。';
-    ch='你可能還沒發現，你正在為別人活';
-    ci='<li><b>你現在被人一句話搞三天，因為你沒有方法處理它。</b>那三天你的判斷力下降、決策品質變差、該做的事沒做、該談的價不敢開口。這不是情緒問題，是你的時間和機會正在被吃掉。這堂課給你一套四步流程——遇到事跑一遍，幾分鐘搞清楚狀況，然後做出清醒的決定。</li><li><b>你不知道自己的價值在哪，所以別人出什麼價你就接什麼價。</b>不敢談薪水、不敢報高價、不敢拒絕不合理的條件——每一次你不敢開口，都是在幫自己打折。這堂課帶你挖出來——你手上會有一張卡，上面寫著你的價值是什麼。知道了，你就敢開口了。</li><li><b>上完之後你手上有兩樣東西：一張你自己挖出來的定錨卡，一套遇到什麼事都能跑的流程。</b>不用找人訴苦、不用等狀態好才能做事。你自己就能處理。</li>';
+    bh='這堂課能幫你什麼';
+    bt='你現在被一句話搞整天，不是因為你脆弱。是因為你一直在用別人的反應來確認自己。上完這堂課之後，你會第一次很清楚地知道——你的價值是什麼、它在哪裡、為什麼別人拿不走。<br><br>知道了之後，那些以前能搞你三天的話，你聽到會覺得：「喔，好。」然後繼續做你的事。';
   }else if(ipq<=13){
     tn='你的底氣，還在別人手上';
-    td='你有能力、也有行動力，但你的自我評價一直在隨著環境擺盪。別人對你好你就覺得自己不錯，別人冷落你你就開始自我懷疑。你很努力，但你的努力方向常常是「讓別人認可我」而不是「做我自己認為對的事」。';
+    td='你不是沒有能力。你做事的時候其實很有行動力。但你有沒有發現——別人誇你一句你就覺得今天不錯，別人冷你一下你就開始懷疑自己。你的心情好不好，取決於今天誰對你說了什麼。你很努力，但你努力的方向常常是「讓別人覺得我不錯」，而不是「做我覺得對的事」。';
     ta='你需要先學會一件事：分清楚「別人的情緒」跟「事實」。分清楚了，你才能從每一次的挫折裡找到真正讓你變強的地方，而不是只帶走一句「我不夠好」。';
-    ch='你可能會想：「這些道理我都知道啊」';
-    ci='<li><b>「不要在意別人的看法」你聽過一百次了。但下次被否定你還是會崩，下次談判你還是不敢堅持。</b>因為那是結論，不是方法。這堂課給你方法——一套流程，在你被打擊的當下就能跑，把「這件事出了什麼問題」跟「我這個人行不行」拆開。拆開了，你的決策不會再被情緒綁架。</li><li><b>你現在遇到挫折花三天消化。上完之後花三分鐘。</b>那省下來的三天你能做多少事？能談多少客戶？能做多少個正確的決定？三天變三分鐘，這不是心態問題，是效率問題。</li><li><b>上完之後你有一套系統。</b>遇到被否定——跑一遍。被消耗——跑一遍。看不到結果——跑一遍。而且每跑一次你都從裡面帶走一個讓你下次更強的東西。你的挫折不是垃圾，是升級的素材。</li>';
+    bh='這堂課能幫你什麼';
+    bt='「不要在意別人的看法」你聯過一百次了。下次被否定你還是崩。因為那是結論，不是方法。<br><br>這堂課不跟你講道理——給你一套流程，遇到事情當下就能跑。跑完你會很清楚：這件事哪裡有問題、哪裡沒有、我該做什麼。<br><br>你現在遇到挫折花三天消化。上完之後花三分鐘。省下來的那三天你能做多少事？能做多少個清醒的決定？';
   }else if(ipq<=20){
     tn='你很拚，但越拚越累';
-    td='你很努力，你也一直在行動——但你有沒有發現，你很多時候是一邊做、一邊懷疑自己。被否定之後你沒有停下來，你繼續做了，但你是一邊做一邊想「我是不是不行」。你的手在動，腦袋卻在審判你自己。這就是你越拚越累的原因——不是你不夠努力，是你的能量有一半拿去餵「我到底行不行」這個問題了。';
+    td='你很拚。被否定了你不會停下來——你會繼續做。但你邊做內心卻有個小聲音在想「我是不是不行」。手在動，腦袋在審判你。這就是你越拚越累的原因。不是你不夠努力——是你的精力有一半拿去內耗了。你做十分的事，有五分的力氣花在「反覆想那句話」上面。那五分，一毛錢的產值都沒有。';
     ta='你需要的不是「更努力」，是在努力的時候把「事情哪裡要改」跟「我這個人行不行」拆開。拆開了，你同樣的力氣會得到完全不同的結果。';
-    ch='你缺的不是意志力，是一套方法';
-    ci='<li><b>你每天花多少時間在「反覆想那句話」上面？那些時間你一毛錢的產值都沒有。</b>這就是你的情緒折舊費——你因為內耗而損失掉的時間、產值、和機會。算一下：一天浪費兩小時內耗，一個月就是 60 小時。這 60 小時你能做多少事？</li><li><b>這堂課教你一個方法，把那個處理時間從三天壓到幾分鐘。</b>而且每一次你跑完這套流程，你會從那件挫折裡拆出一個讓你下次更強的東西。別人被打趴了就趴了，你被打趴了站起來的時候手上多一把刀。同樣的市場、同樣的競爭——你跟別人的差距就是在這裡拉開的。</li><li><b>上完之後你同樣的努力會得到完全不同的結果。</b>你的能量不再漏了、你的挫折在幫你升級、你做決定不再被情緒帶著走。這不是心靈課程——這是讓你的底氣直接變成你的競爭力。</li>';
+    bh='這堂課能幫你什麼';
+    bt='你做十分的事，有五分的力氣花在「反覆想那句話」上面。那五分，一毛錢的產值都沒有。這堂課教你怎麼把那五分拿回來。<br><br>而且不只拿回來——每一次你被打趴，你站起來的時候會比上一次更強。不是因為你更努力了，是因為你開始從困難裡面帶走東西了。<br><br>同樣的力氣，完全不同的結果。';
   }else if(ipq<=27){
-    tn='偶爾有底氣，但容易被挫折拉回去';
-    td='你已經開始覺察了，狀態好的時候你很穩、很有主見。但遇到一次大的挫折就退回原點，信心要花好幾天才能重建。你的底氣像是天氣——晴天的時候你很強，但只要下一場雨，你就又縮回去了。尤其是夜深人靜、只剩你自己的時候，白天那個很穩的你會消失，取而代之的是一個不斷問自己「我真的可以嗎」的聲音。你大部分時候已經能把事跟人分開了，但有那麼幾個特定的點——某個人、某種場合——會讓你直接退回到一邊做一邊懷疑的狀態。';
+    tn='偶爾有底氣，但容易被拉回去';
+    td='你大部分時候是穩的。開會穩、做事穩、被唸了也不太會當場崩。但你有幾個死穴。可能是某個人——他講的話特別容易讓你卡住。可能是某種場合——你一到那裡就會不自覺地縮小。平常那個很有主見的你，在那幾個點上會不見。尤其是晚上一個人的時候。白天撐住的東西，到了深夜會全部跑出來。你會問自己：我真的可以嗎？然後隔天早上又裝作沒事。';
     ta='你差的不是底氣本身，是一套讓底氣在深夜也不退場的系統。';
-    ch='你已經有底氣了——但它還不夠自動';
-    ci='<li><b>你大部分時候是穩的。但你知道你的弱點在哪——某個人的一句話、某個場合、某個你特別在意的領域。</b>平常你做決定又快又準，但那個點被踩到的時候，你會連續幾天做出跟平常不一樣水準的判斷。你的團隊看得出來、你的客戶感覺得到、你自己也知道。</li><li><b>這堂課幫你把那幾個死角補起來。</b>不是大修——你的系統已經在運作了。是讓它在你最脆弱的時候也不當機。上完之後你靠的不是「今天狀態好不好」，是一套不管什麼狀態都能跑的方法。</li><li><b>你現在的底氣夠用了，但它偶爾會斷電。上完之後它會變成不斷電系統。</b>穩的人做什麼都比不穩的人快——因為他不用花時間恢復。</li>';
+    bh='這堂課能幫你什麼';
+    bt='那個死穴被踩到的時候，你連續幾天做出跟平常不一樣水準的判斷。你的團隊看得出來、你的家人感覺得到、你自己也知道。<br><br>這堂課不是大修——是讓你在那個最脆弱的點上也不當機。上完之後你靠的不是「今天狀態好不好」，是不管什麼狀態都能穩住的方法。<br><br>對了——你身邊如果有人被一句話就搞三天的，把這個測驗傳給他。';
   }else if(ipq<=33){
     tn='底氣穩定，但偶爾會晃';
-    td='你大多數時候是穩的。別人的話你聽得進去但不會被帶走，遇到挫折你能比大多數人更快恢復。但在某些特定的情境——某個人、某種場合、某個你特別在意的領域——你的穩定會出現裂縫。你離真正的不可動搖，只差最後一步。';
+    td='別人的話你聽得進去，但不太會被帶走。遇到事情你恢復得比大部分人快。你已經很穩了。但你自己知道——有那麼一兩個地方，你的穩會裂開。可能是某個人面前你會縮、可能是某個領域你特別沒有安全感、可能是某種場合讓你打回原形。你 95% 的時候像一座山。但那 5% 出現的時候，你自己都會嚇到——原來我還會這樣。';
     ta='你需要的不是大修，是把最後那幾道裂縫補起來。';
-    ch='你已經很穩了——這堂課補最後那幾道裂縫';
-    ci='<li><b>你可能覺得你不需要上課了。那我問你一件事：上一次讓你晃的是什麼？</b>那個東西就是你最後一道題。你 95% 的時候穩如泰山，但那 5% 出現的時候，你做的決定、你說的話、你的反應——可能會讓你前面累積的東西一次崩掉。</li><li><b>這堂課讓你現在靠本能在做的事，變成一套系統。</b>本能靠狀態——狀態好就穩，狀態差就晃。系統不靠狀態——不管你昨天睡得好不好、心情怎麼樣，遇到事情跑一遍就處理完。</li><li><b>補起來之後，你不只自己穩——你可以把這套方法帶給你的團隊、你在乎的人。</b>你穩了，你身邊的人才有可能穩。</li>';
+    bh='這堂課能幫你什麼';
+    bt='你 95% 的時候穩如泰山。但那 5% 出現的時候，前面累積的東西可能一次崩掉。<br><br>你現在靠的是本能。本能靠狀態——狀態好就穩，狀態差就晃。這堂課讓你把本能變成系統。系統不靠狀態——不管昨天發生了什麼，今天遇到事情你照樣處理完。<br><br>對了——你身邊一定有一個人。你看著他被一句話搞三天，你很想幫但不知道怎麼幫。把這個測驗傳給他。';
   }else{
     tn='你已經是自己的操盤手';
-    td='外界的聲音對你來說是參考，不是判決。你的底氣在自己身上，別人的評價動搖不了你的核心。你清楚你是誰、你要什麼、你在走什麼路。';
+    td='別人的評價你聽，但你不會因為誰說了什麼就改變你的方向。你很清楚你是誰、你要什麼。這不是天生的——是你自己走出來的。你知道那條路有多難走，因為你走過。';
     ta='你已經擁有底氣了。下一步是把它傳遞出去，影響你身邊的人。';
-    ch='你可能不需要這堂課——但你身邊一定有人需要';
-    ci='<li><b>想一個人。</b>那個被別人一句話就搞三天的朋友。那個什麼都幫但從來不拒絕的家人。那個明明很強但永遠覺得自己不夠好的同事。那個一直在努力但越拚越累的合夥人。</li><li><b>把這個測驗傳給他。</b>有時候一個人知道自己有問題，但他不知道問題叫什麼、也不知道有方法可以解決。這個測驗會讓他第一次看到自己的狀態——你的一個分享，可能是他的轉捩點。</li>';
+    bh='你身邊一定有人需要';
+    bt='你可能不需要這堂課。但你一定認識這樣的人——<br><br>被一句話就搞三天的。什麼都幫但從來不拒絕的。明明很強但永遠覺得自己不夠好的。一直在努力但越拚越累的。<br><br>你可能也跟他說過「別想太多」。但沒用。因為那是結論，不是方法。<br><br><b>把這個測驗傳給他。</b>你的一個分享，可能是他的轉捩點。';
   }
   document.getElementById('TN').textContent=tn;
   document.getElementById('TD').textContent=td;
   document.getElementById('TA').textContent=ta;
-  document.getElementById('CH').textContent=ch;
-  document.getElementById('CI').innerHTML=ci;
+  document.getElementById('BH').textContent=bh;
+  document.getElementById('BT').innerHTML=bt;
 
   // Type calculation (based on RAW scores - higher raw = weaker in that area)
   // Lowest raw = strongest area = your type
@@ -252,106 +242,96 @@ function GO(){
   // Normalize to per-question average
   var nAnc=sAnc/3, nRef=sRef/3, nAwk=sAwk/3, nLep=sLep/3;
 
+  // Type data
+  var typeData={
+    anc:{emoji:'⚓',name:'定海者',subtitle:'你在，大家就安心了。',quote:'不是你不怕。是你怕了也扛得住。這就是差別。',description:'別人慌的時候你不會慌。不是因為你不在乎——是你扛得住。你不需要馬上反應、馬上回嘴、馬上證明什麼。你就是穩穩地站在那裡，然後身邊的人就安心了。你的底氣不是那種很大聲的。是那種不用講，別人就感覺得到的。'},
+    ref:{emoji:'🔥',name:'淬煉者',subtitle:'摔一次，強一次。',quote:'沒壓垮我的，都在替我練功。',description:'別人摔完在那邊問「為什麼是我」，你摔完第一件事是看哪裡出了問題。你會拆——這次為什麼摔、下次怎麼不一樣。同樣的坑你不會踩第二次。你的底氣不是因為你不會摔。是因為你每摔一次就多一把武器。'},
+    awk:{emoji:'👁️',name:'洞察者',subtitle:'你一眼就看穿了。',quote:'別人看到問題。你看到問題背後的問題。',description:'別人還在情緒裡面轉的時候，你已經看清楚了。什麼值得在意、什麼不值得，你分得很快。你不太容易被唬住——話術也好、假象也好，你看得穿。你的底氣來自你看得清楚。看清楚了，就不容易被動搖。'},
+    lep:{emoji:'⚡',name:'破局者',subtitle:'想好了就走。不等。',quote:'別人在等準備好。你已經在路上了。',description:'別人還在想的時候，你已經在做了。你不太猶豫，也不太需要別人先跟你說「你可以」你才敢走。目標出現，你就去。雜訊你會直接切掉。你的底氣不是來自確定——是來自「錯了再改就好」。'}
+  };
+
   // Type = LOWEST score (strongest area)
   var types=[
-    {k:'anc',v:nAnc,i:'🌊',n:'深海型',s:'你的強大在於定力',
-     d:'你的力量來自「靜止」與「吸收」。當外界的壓力湧入時，你不急於反擊，而是透過內在的穩定把壓力化為無形。在混亂的場面裡，你只要在那裡，別人就會覺得安心。你的底氣不是張揚型的——是那種不需要證明什麼的沉穩。',
-     m:'世界再吵，動不了我的核。'},
-    {k:'ref',v:nRef,i:'💧',n:'水銀型',s:'你的強大在於——摔完你會變更強',
-     d:'別人遇到挫折在那邊想「為什麼是我」，你遇到挫折第一件事是看清楚到底哪裡出了問題、下次怎麼不一樣。每一次的挫折到你手上都會被拆開，變成你下一次更強的底氣。你最厲害的地方是：同樣的坑你絕對不會踩第二次。',
-     m:'沒壓垮我的，都在替我練功。'},
-    {k:'awk',v:nAwk,i:'🔥',n:'火焰型',s:'你的強大在於覺察',
-     d:'你的力量來自「看見」與「清醒」。你能在別人還在情緒裡打轉的時候就已經看清楚局面。你知道什麼值得在意、什麼不值得。你的底氣來自你對自己和世界都有一份清晰的理解——你不容易被話術或假象動搖。',
-     m:'看透不說透，是最高級的底氣。'},
-    {k:'lep',v:nLep,i:'⚡',n:'雷霆型',s:'你的強大在於執行',
-     d:'你的力量來自「動能」與「行動」。當目標出現時，你會切斷所有雜訊直接去做。你不太花時間猶豫，也不太需要別人的鼓勵。在所有人都在「想」的時候，你已經在「做」了。',
-     m:'當我出手，環境為我讓路。'}
+    {k:'anc',v:nAnc},
+    {k:'ref',v:nRef},
+    {k:'awk',v:nAwk},
+    {k:'lep',v:nLep}
   ];
 
   // Sort: lowest raw = strongest = primary type
   types.sort(function(a,b){return a.v-b.v;});
   var primary=types[0];
   var secondary=types[1];
+  var weakest=types[3];
 
-  document.getElementById('YI').textContent=primary.i;
-  document.getElementById('YN').textContent=primary.n;
-  document.getElementById('YS').textContent=primary.s;
-  // Secondary type combo descriptions
+  var pData=typeData[primary.k];
+  var sData=typeData[secondary.k];
+
+  // Combo descriptions
   var combos={
-    '深海型_水銀型':'你的核心是穩定，但你不只是扛得住——你摔完還會從裡面帶走東西。別人扛完就算了，你扛完會變更強。',
-    '深海型_火焰型':'你的核心是穩定，同時你的覺察力也很強。你穩，而且你知道自己為什麼穩。',
-    '深海型_雷霆型':'你的核心是穩定，但必要的時候你也敢衝。你不是只會守——需要出手的時候你不會猶豫。',
-    '水銀型_深海型':'摔完你能從裡面拆出東西，同時你的核心很穩，不會在拆的過程中被帶走。你能從挫折裡學東西，但你有底線。',
-    '水銀型_火焰型':'摔完你能拆出東西，而且你看得很清楚到底該拆什麼。別人遇到挫折只覺得痛，你遇到挫折知道痛在哪、為什麼痛、下次怎麼不痛。',
-    '水銀型_雷霆型':'摔完你能拆出東西，而且拆完你馬上就動。不拖、不等、不猶豫。想通了就做，做完就更強。',
-    '火焰型_深海型':'你的覺察力很強，同時你也有一份深層的穩定感。你看得清楚，而且不容易被看到的東西嚇到。',
-    '火焰型_水銀型':'你看得清楚，而且你會把看到的東西拆開來用。別人看到問題會焦慮，你看到問題會想「這個可以怎麼用」。',
-    '火焰型_雷霆型':'你看得清楚，而且你敢動。很多人是看到了但不敢做，你是看到了就去做。',
-    '雷霆型_深海型':'你的行動力是你最大的武器，而且你有一份內在的穩定在支撐。你衝得快，但你的根紮得住。',
-    '雷霆型_水銀型':'你敢衝，而且你每次撞牆之後都會從裡面學到東西。你不怕做錯，因為做錯了你不會白錯——下次同一面牆你就知道怎麼過。',
-    '雷霆型_火焰型':'你敢衝，而且你看得到全局。你的行動不是盲目的——你知道自己在做什麼、為什麼做。'
+    'anc_ref':{name:'淬煉型定海者',desc:'你是朋友圈裡那個「有事找他就對了」的人。不是因為你最厲害——是因為你在，大家就覺得沒事了。你很少慌，就算心裡有壓力，臉上也看不太出來。但你不只是撐住而已——你每次撐完都會安靜地想一遍「剛剛發生了什麼」，然後下次同樣的事你就處理得更快了。你不太會跟別人說你在想這些。你就是默默變強的那種人。但你可能沒意識到的是：你已經很久沒有讓別人幫你扛過什麼了。'},
+    'anc_awk':{name:'洞察型定海者',desc:'開會的時候別人在吵，你通常不太講話。不是因為你沒想法——是你已經看到問題在哪了，但你覺得現在講沒用。你很常在心裡想「這個人在氣的根本不是這件事」，但你不會說。你的穩不是天生的，是因為你比大部分人更快看懂事情在發生什麼。但偶爾你會覺得有點孤獨——因為你看得太清楚，身邊很少有人看到跟你一樣的東西。'},
+    'anc_lep':{name:'破局型定海者',desc:'你平常看起來很隨和。但跟你共事過的人都知道，真的到了要做決定的時候，你比誰都果斷。你不是那種每天都在衝的人——你是那種平常蹲著，關鍵時刻站起來一次就定勝負的人。你做這件事的時候甚至不太會猶豫。但你不說的是：你判斷要不要出手之前，其實已經在心裡跑過很多遍了。你只是不讓別人看到那個過程。'},
+    'ref_anc':{name:'定海型淬煉者',desc:'你不太怕失敗。不是因為你很樂觀——是因為你知道就算搞砸了，你也不會崩。你會很安靜地整理一遍發生了什麼，然後調整。不聲張、不抱怨、不發限動說你多辛苦。下次別人看到你的時候，你已經不一樣了，但他們不知道你經歷了什麼。你進化的方式很安靜。但你偶爾會想：有沒有人注意到你其實一直在變。'},
+    'ref_awk':{name:'洞察型淬煉者',desc:'你有一個別人沒有的能力：你不只會從失敗裡爬起來，你還看得到「這次到底栽在哪裡」。很多人摔完只覺得痛，你摔完會自動開始分析。哪裡做錯了、為什麼做錯、下次怎麼繞過去。你拆問題的精準度很高——不會亂拆一通，是切到最關鍵的那個點。你的問題是：你有時候太會分析了，分析完反而不動了。'},
+    'ref_lep':{name:'破局型淬煉者',desc:'你的循環速度比一般人快很多。摔了→想清楚為什麼→馬上去做→變更強。別人還在消化上一次的挫折，你已經在打下一場了。你不太花時間自我懷疑，不是因為你不在乎，是因為你覺得想太久不如直接試。你的節奏很快，快到身邊的人有時候跟不上。你的問題是：你跑太快的時候，偶爾會忽略一些不該忽略的細節。'},
+    'awk_anc':{name:'定海型洞察者',desc:'你很少做讓自己後悔的決定。因為你在做決定之前，已經把所有可能性都想過一遍了。別人覺得你反應慢，其實你不是慢——你是在確認。你需要看到全貌才會出手。這讓你很少出錯，但也讓你錯過一些「不完美但值得試」的機會。你自己也知道。晚上躺在床上的時候，你偶爾會想到那些你「本來可以做但沒做」的事。不是後悔，是有一點點可惜。'},
+    'awk_ref':{name:'淬煉型洞察者',desc:'你看人很準。不是那種玄學的準——是你觀察得很仔細。誰在逞強、誰在裝沒事、誰說的話跟做的事不一樣，你都看得到。而且你不只看，你會分析。「他為什麼會這樣？」你很常在心裡問這個問題。你把身邊發生的每一件事都當成素材在處理——工作上的、感情裡的、朋友之間的。你的問題是：你很會幫別人看清楚他的問題，但你自己的盲點你反而看不到。因為你太少把那個分析的眼睛轉向自己。'},
+    'awk_lep':{name:'破局型洞察者',desc:'你做事的成功率比一般人高。不是因為你運氣好——是因為你在出手之前已經想過了，只是你想得很快，快到別人以為你沒想。你同事可能覺得你很敢衝，但你心裡清楚：你每一步都是算過的。你不是在冒險，你是在做「你已經想清楚的決定」。但你不太會跟別人解釋這個過程。有時候別人會覺得你太自信了。你也懶得解釋。反正結果會說話。'},
+    'lep_anc':{name:'定海型破局者',desc:'你敢衝，而且你不太會翻車。這很少見——大部分行動力強的人，衝得快但也摔得重。你不一樣，你骨子裡有一份穩，讓你在衝的時候還能控制方向。你是那種能「又快又穩」的人，像一台底盤很低的跑車——速度很快但不飄。你的問題是：你有時候會過度依賴自己的穩，覺得「反正我扛得住」，然後接了太多不該接的東西。'},
+    'lep_ref':{name:'淬煉型破局者',desc:'你撞牆不會白撞。別人撞完在那裡痛，你撞完第一件事是看那面牆到底是什麼做的、下次怎麼繞。你不怕做錯——因為你知道做錯了你不會白錯，你一定會從裡面拿到東西。你的速度加上你的學習力，長期下來別人根本追不上你。你的問題是：你有時候太相信「錯了再改就好」，以至於你出手之前的準備不太夠。'},
+    'lep_awk':{name:'洞察型破局者',desc:'你是那種讓人覺得「他怎麼什麼都敢做而且都做對」的人。其實不是都做對——是你做之前已經想過了，只是你想的速度太快，別人以為你沒想。你的行動不是盲目的，你知道自己在幹嘛。你的問題是：因為你太習慣「想完就做」，所以你不太有耐心等。該等的時候你也想出手，有時候會出手太早。'}
   };
-  var comboKey=primary.n+'_'+secondary.n;
-  var comboDesc=combos[comboKey]||'';
-  document.getElementById('Y2').innerHTML='副型：'+secondary.n+' '+secondary.i+'<br><span style="font-size:.82rem;color:#6b5b52;font-weight:400;">'+comboDesc+'</span>';
-  document.getElementById('YD').textContent=primary.d;
-  document.getElementById('YM').textContent='「'+primary.m+'」';
+
+  var comboKey=primary.k+'_'+secondary.k;
+  var combo=combos[comboKey]||{name:sData.name+'型'+pData.name,desc:''};
+
+  document.getElementById('YI').textContent=pData.emoji;
+  document.getElementById('YN').textContent=combo.name;
+  document.getElementById('YS').textContent=pData.subtitle;
+  document.getElementById('YD').textContent=combo.desc;
+  document.getElementById('YM').textContent='「'+pData.quote+'」';
+
+  // Seed framing for low scorers
+  if(ipq<=13){
+    document.getElementById('TL').textContent='你的底氣種子';
+    document.getElementById('TP2').style.display='block';
+    document.getElementById('TP2').textContent='這不是你現在的狀態——是當你的底氣長出來之後，你最有可能成為的樣子：';
+  }else{
+    document.getElementById('TL').textContent='你的底氣類型';
+    document.getElementById('TP2').style.display='none';
+  }
 
   // Weakest area (highest raw = most 内耗) - ALWAYS show specific weakness
-  var weakest=types[3];
-  var strongest=types[0];
-  // Different descriptions based on primary type + weakest combo
   var weakDescs={
     'anc':{
-      '深海型':'你的內核其實很穩——但你知道嗎？你最脆弱的時刻，不是遇到大事的時候，是某個你在乎的人隨口一句否定的時候。那個裂縫很小，但它會讓你在深夜反覆想：「他是不是覺得我不夠好？」你的穩定是真的，但它還有一個沒被保護好的入口。',
-      '水銀型':'你很擅長把挫折轉化成養分——但有些話，在你來得及轉化之前，就已經刺進去了。你事後能處理得很好，問題是那個「被刺到的瞬間」，你完全沒有防備。你的轉化能力是強的，但你缺一道在第一時間就擋住的牆。',
-      '火焰型':'你比大多數人都更清楚「別人的話不代表你的價值」——但清楚歸清楚，你的身體還是會有反應。理智上你知道他說的不對，情緒上你還是被帶走了。最讓你累的不是那句話本身，是你明明看透了卻還是會痛。',
-      '雷霆型':'你的行動力很強，但你有沒有注意過——有些時候你拼命做，不是因為你想做，是因為你想證明「那個否定你的人是錯的」。這個動力很猛，但也很危險，因為哪天你不需要證明了，你可能就不動了。'
+      'anc':'你扛得住事情，大家都知道。但你有沒有想過——你扛了這麼多，到底是為了什麼？你很穩，但你的穩有時候不是因為你知道方向，是因為你習慣了撐在原地。別人問你「你想要什麼」的時候，你會愣一下。不是你沒想過，是你真的想不出來。你花了太多時間在扛別人的事，已經忘記自己要什麼了。',
+      'ref':'你每次摔完都會帶走東西，這是你的本能。但你有沒有發現——你帶走了一堆武器，卻不知道要打什麼仗。你一直在變強，但如果有人問你「你想變成什麼」，你答不太上來。你的成長很快，但沒有方向的成長到最後會讓你很累——因為你一直在跑，回頭一看不知道自己跑了這麼久是為了誰。',
+      'awk':'你看別人的事情看得很清楚。朋友來問你意見，你兩句話就能講到重點。但你自己的事呢？你最近一次認真想「我到底想要什麼」是什麼時候？你很會幫別人看方向，但自己的方向你反而看不清。不是你不聰明——是你把所有的觀察力都花在別人身上了，從來沒有認真看過自己。',
+      'lep':'你很敢衝。別人還在想你已經做完三件事了。但你偶爾會在忙完之後突然覺得空——「我剛剛忙那些是為了什麼？」你的油門很猛，但你的導航有時候是空白的。你不是不努力，是你不確定自己在努力的方向對不對。做了很多事，交出很多成績，但心裡就是沒有一個踏實的感覺。你比誰都忙，但你比誰都說不出來你在忙什麼。'
     },
     'ref':{
-      '深海型':'你看起來永遠都很穩，但你的穩法是「不去想」。遇到挫折打擊你不動、不說、不想——東西沒有被拆開看過，只是被壓在更深的地方。你不是處理了，你是封住了。所以同樣的問題會一直出現，因為你從來沒有打開來看過它到底在告訴你什麼。',
-      '水銀型':'大部分的挫折你都能從裡面拆出東西——但有那麼幾個人的話，你拆不動。通常那個人是你最在乎的人。因為其他人的話你可以用腦子處理，但那個人的話會直接繞過你的腦子，刺到你的自我價值。你什麼都拆得開，唯獨拆不開他的。',
-      '火焰型':'你分析得太清楚了——清楚到你在看問題出在哪的時候，會順便把「我這個人是不是有問題」也一起看進去。你的覺察力是你的武器，但有時候它也會反過來解剖你自己。你不缺看清事情的能力，你缺的是看完之後不把矛頭指向自己。',
-      '雷霆型':'你的方式是摔完就直接衝下一件事——不舒服就去忙、去做、去動。但你從來不回頭看剛才到底摔在哪裡。結果同一個坑你踩了第二次、第三次，因為你跑得太快，從來沒停下來拆過它。你的速度是你的優勢，但偶爾你需要停下來看一看。'
+      'anc':'你扛得住，但你扛的方式是硬吞。事情來了你不會崩，你會撐住，把該做的做完。但你沒有消化。你把那些不舒服的東西壓在心裡，告訴自己「沒事」「過了就好」。但它沒有過。它只是被你壓下去了。你以為你在扛，其實你在存。存到有一天你自己都不知道為什麼突然對一件小事爆開。',
+      'ref':'你會從失敗裡學東西，但你學的方式有一個問題——你每次摔完，第一個反應不是「哪裡出了問題」，是「我是不是有問題」。你會改、你會進步，但你是帶著悶在改的。改完了事情變好了，但你心裡那個「我是不是不夠好」還是沒有走。你的進步是真的。但你的內耗也是真的。兩個同時在跑。',
+      'awk':'你看得清楚事情的問題在哪。但輪到自己被打擊的時候，你的分析能力突然就不見了。平常幫別人拆問題拆得很清楚的你，被主管唸一句之後回家想的不是「他說的對不對」，而是「他是不是覺得我很廢」。你知道不應該這樣想。但你控制不了。理智上你看得很清楚，情緒上你跟所有人一樣會被帶走。你最大的矛盾就是：你幫得了別人，但遇到自己的事你的冷靜就斷線了。',
+      'lep':'你被打趴了會馬上站起來。但你站起來的方式不是整理完了再出發——是帶著一肚子氣直接衝。你的速度很快，快到你以為自己已經處理完了。但你沒有處理，你只是跳過了。那些你沒有消化的東西不會消失。它們會在某一天、某一個你以為不重要的場合跑出來。然後你會莫名其妙對一個不相干的人發脾氣，事後自己也不知道為什麼。'
     },
     'awk':{
-      '深海型':'因為你太穩了，所以所有人都來靠你。你是朋友的垃圾桶、同事的救火隊、家人的主心骨。你扛得住——但你已經很久沒問過自己累不累了。你的善良撐起了所有人，但沒有人在撐你。再穩的人，也有被掏空的一天。',
-      '水銀型':'你太會配合了——配合到別人都以為你「真的沒關係」。但你有關係，你很有關係，你只是從來不說。你笑著答應的每一次，心裡都在扣分。等到有天你突然爆發，所有人都會說「你不是說沒關係嗎」——因為你從來沒讓他們知道你的底線在哪。',
-      '火焰型':'你看得到這段關係正在消耗你——你甚至能精準描述問題出在哪。但你就是不處理。不是因為你不敢，是因為你在等一個「不會傷害任何人」的完美時機。但那個時機不會來。而你在等待的每一天，都在付出代價。',
-      '雷霆型':'工作上你很果斷——要砍就砍、要推就推。但面對關係，你的果斷會消失。你可以炒掉一個不適任的員工，但你沒辦法跟一個消耗你的朋友說「我不想再這樣了」。因為你怕的不是衝突，是失去。而這個「怕失去」，正在讓你失去更多。'
+      'anc':'你很穩、很可靠、什麼事都扛。但你有一個問題——你不會拒絕。不是你不想，是你開不了口。同事丟事情給你你接、朋友半夜找你訴苦你聽、家人叫你做什麼你就做。你心裡不願意，但你嘴巴已經說好了。因為你怕拒絕了，他們就不再來找你了。你的穩不是問題。問題是你把穩當成了義務。你撐住了所有人，但沒有人問過你累不累。你也不讓人問。',
+      'ref':'你很會成長，但你把成長的能量分給太多人了。你花在幫別人想辦法的時間，比花在自己身上的多。別人有事你第一個到，你自己有事你最後一個處理。你一邊在變強，一邊在漏。你進步三分，被消耗掉兩分，實際上只前進了一分。你不是不夠快——是你的油一直在被別人用。而你還覺得這是應該的。',
+      'awk':'你什麼都看得到。誰在不開心、誰需要被照顧、誰今天不對勁——你第一個察覺。然後你就去了。去關心、去問、去幫忙。但你有沒有想過，你最後一次有人來關心你是什麼時候？你一直在照顧別人的情緒，但你自己不舒服的時候你不說。不是你不想說——是你覺得說了也沒用，反正沒有人會像你對他們那樣對你。所以你就自己消化。一直消化，一直消化，消化到有一天你突然覺得好累。不是身體累，是心累。',
+      'lep':'你很會做事，但你不太會停。別人叫你幫忙你就幫，不是因為你想幫——是因為你覺得拒絕很麻煩。你寧可多做一點，也不想花時間解釋為什麼不做。但你心裡有一個聲音你一直沒有聽：「為什麼每次都是我？」你不是沒有界線。你是嫌設界線太囉唆所以算了。但「算了」到最後就變成了「都是你的事」。你忙得要死，但有一半的忙不是你的。'
     },
     'lep':{
-      '深海型':'你的穩定是你的武器，但有時候也是你的枷鎖。因為你太穩了，所以你不太願意冒險。你在等所有條件都到位才出手——但真實世界不會等你準備好。你最大的風險，不是做錯，是什麼都沒做。那些你「還在考慮」的事，別人已經做完了。',
-      '水銀型':'你很聰明，選項也很多——但你換方向換得太頻繁了。A 做三個月沒結果換 B，B 做兩個月又想試 C。問題不是你選錯方向，是你每次「沒結果」的時候，沒有停下來分辨：是方向真的不對，還是只是還沒到收穫的時間？這兩個長得很像，但處理方式完全不同。你需要的不是更多耐心，是一套判斷標準——讓你知道什麼時候該堅持、什麼時候該轉彎。',
-      '火焰型':'你看得到終點在哪，也看得到路上有多少坑。問題是——你看得太清楚了，清楚到你不敢出發。別人是走到坑的時候才怕，你是還沒走就已經在怕了。你以為你在「謹慎評估」，但其實你在「用分析代替行動」。看到風險不是問題，讓風險擋住你才是。',
-      '雷霆型':'你很敢衝——但你的油箱靠的是「回報」。有掌聲你就跑得飛快，沒掌聲你就熄火了。你放棄的那些事，通常不是因為做不到，是因為太久沒人拍手。最可惜的不是失敗，是你其實離成功只剩一步，卻因為沒人看見就停下來了。'
+      'anc':'你很穩。但你的穩有時候變成了不敢往前走的理由。你會告訴自己「再看看」「再等等」「時機還沒到」。但你心裡知道，你不是在等時機——你是在怕。怕走出去了那個穩就沒了。怕做錯決定。怕好不容易建起來的東西因為一個選擇全部崩掉。所以你就待在原地。很穩，但沒有往前。你最大的問題不是做不到。是你一直在「準備好了再說」，但那個「準備好了」永遠不會來。',
+      'ref':'你很會學。每次遇到問題你都會拆、會想、會從裡面帶走東西。但你花太多時間在學了。學完這個學那個，看完這本看那本，覺得自己還不夠、還沒準備好、還需要再研究一下。你一直在輸入，但很少輸出。你的筆記本裡寫了很多東西，但真正拿出來做的有幾個？你把「學習」當成了行動，但學習不是行動。做了才是。你不缺能力。你缺的是按下開始的那一下。',
+      'awk':'你看得很清楚。機會在哪裡你看到了、方向對不對你也知道、該做什麼你心裡都有數。但你就是不做。不是不想做——是你想太多了。你把每一條路都看到底，每一個風險都預想過了。然後你覺得哪條路都有問題。所以你哪條都沒走。你以為你在思考，其實你在猶豫。你以為你在分析，其實你在拖延。你看得到別人看不到的機會，但你讓那些機會一個一個從你面前走過去了。',
+      'lep':'你很敢衝——但只敢衝你有把握的。真正讓你害怕的那件事，你一直繞著走。你做了很多事、忙了很多事，但那些可能都是你在逃避那一件事。你心裡知道哪件事才是最重要的。但你不去碰它。因為那件事一旦做了，你就沒有退路了。你用忙碌來掩蓋你在拖延。從外面看，你是最有行動力的人。但只有你自己知道，你最該做的那件事，你一直沒有開始。'
     }
   };
   var wk=weakDescs[weakest.k];
-  var wText=wk[primary.n]||wk['default'];
+  var wText=wk[primary.k]||'';
   document.getElementById('WD').textContent=wText;
-
-  // 送資料到 Google Sheets
-  var SHEET_URL='https://script.google.com/macros/s/AKfycbwSZ-YHf_-pZTBWtziTVjlFeE8rrZlOCFwSl_YFiTVrcu2hWyi4UsvLeKs0pHzdneQ5/exec';
-  if(SHEET_URL.indexOf('__')===0) return;
-  var weakNames={anc:'定錨',ref:'煉化',awk:'覺醒',lep:'突變'};
-  var tierShort=tn.substring(0,15);
-  try{
-    var payload={
-      age:document.getElementById('age').value||'',
-      job:document.getElementById('job').value||'',
-      q1:vals[1],q2:vals[2],q3:vals[3],q4:vals[4],q5:vals[5],q6:vals[6],
-      q7:vals[7],q8:vals[8],q9:vals[9],q10:vals[10],q11:vals[11],q12:vals[12],
-      ipq:ipq,
-      tier:tierShort,
-      primaryType:primary.n,
-      secondaryType:secondary.n,
-      weakest:weakNames[weakest.k]||''
-    };
-    var form=new FormData();
-    form.append('payload',JSON.stringify(payload));
-    navigator.sendBeacon(SHEET_URL,form);
-  }catch(e){}
 }
 </script>
 </body>
