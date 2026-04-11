@@ -33,6 +33,7 @@
   .sh{font-size:.78rem;color:#bbb;margin-top:10px;}
   .result{display:none;padding:0 0 60px;}
   .result.show{display:block;}
+  body.showing-result .hero{display:none !important;}
   .rsc{background:linear-gradient(160deg,#3a2e2a,#5a4a42);border-radius:18px;padding:36px 28px;text-align:center;color:#f0ece8;margin-bottom:20px;}
   .rsc .sl{font-size:.8rem;color:#c8bdb5;letter-spacing:2px;margin-bottom:6px;}
   .rsc .sn{font-size:3.5rem;font-weight:700;color:var(--acc);line-height:1;margin-bottom:8px;}
@@ -186,6 +187,7 @@ function GO(){
   document.getElementById('sw').style.display='none';
   document.getElementById('intro').style.display='none';
   document.getElementById('hero').style.display='none';
+  document.body.classList.add('showing-result');
   document.getElementById('R').className='result show';
   window.scrollTo(0,0);
 
